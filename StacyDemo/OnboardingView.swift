@@ -17,20 +17,14 @@ struct OnboardingView: View {
   
   var body: some View {
     VStack {
-      Image("onb_find_place")
-        .resizable()
-        .frame(height: 400)
-        .frame(maxWidth: .infinity)
-      Text("Find Places to Live")
-        .font(.title)
-        .foregroundColor(Color("title"))
-        .bold()
-        .padding()
-      Text("Find great verified places & people to share the home with.")
-        .multilineTextAlignment(.center)
-        .font(.body)
-        .foregroundColor(Color("text"))
-        .padding(.horizontal, 15)
+      TabView {
+        ForEach(0 ..< onboardingData.count) { index in
+          let element = onboardingData[index]
+          OnboardingCard(onboardingItem: element)
+        }
+      }
+      .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
+      .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
     }
   }
 }
@@ -39,4 +33,27 @@ struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
       OnboardingView()
     }
+}
+
+fileprivate struct OnboardingCard: View {
+  let onboardingItem: OnboardingItem
+  
+  var body: some View {
+    VStack {
+      Image(onboardingItem.imageName)
+        .resizable()
+        .frame(height: 400)
+        .frame(maxWidth: .infinity)
+      Text(onboardingItem.title)
+        .font(.title)
+        .foregroundColor(Color("title"))
+        .bold()
+        .padding()
+      Text(onboardingItem.description)
+        .multilineTextAlignment(.center)
+        .font(.body)
+        .foregroundColor(Color("text"))
+        .padding(.horizontal, 15)
+    }
+  }
 }
