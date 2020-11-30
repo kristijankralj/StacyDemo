@@ -10,14 +10,19 @@ import SwiftUI
 struct OnboardingView: View {
   var body: some View {
     VStack {
+      Image("onb_find_place")
+        .resizable()
+        .frame(height: 400)
+        .frame(maxWidth: .infinity)
       Text("Find Places to Live")
         .font(.title)
-        .foregroundColor(.primary)
+        .foregroundColor(Color("title"))
         .bold()
         .padding()
       Text("Find great verified places & people to share the home with.")
+        .multilineTextAlignment(.center)
         .font(.body)
-        .foregroundColor(.primary)
+        .foregroundColor(Color("text"))
         .padding(.horizontal, 15)
     }
   }
