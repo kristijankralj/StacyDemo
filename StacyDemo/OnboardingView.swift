@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct OnboardingView: View {
+  
+  var onboardingData: [OnboardingItem] = [
+    OnboardingItem(imageName: "onb_find_place", title: "Find Places to Live", description: "Find great verified places & people to share the home with."),
+    OnboardingItem(imageName: "onb_match", title: "Match Your Preferencs", description: "Tell us your preferences and match with the right people."),
+    OnboardingItem(imageName: "onb_like", title: "Like-minded People", description: "Live together with people who will inspire like you.")
+  ]
+  
   var body: some View {
     VStack {
       Image("onb_find_place")
