@@ -10,7 +10,6 @@
 		C8198C9C2574E1600003CE05 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8198C9B2574E1600003CE05 /* OnboardingView.swift */; };
 		C8198C9F257500B80003CE05 /* OnboardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8198C9E257500B80003CE05 /* OnboardingItem.swift */; };
 		C8E959BC257111BF000A7E10 /* StacyDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E959BB257111BF000A7E10 /* StacyDemoApp.swift */; };
-		C8E959BE257111BF000A7E10 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E959BD257111BF000A7E10 /* ContentView.swift */; };
 		C8E959C0257111C0000A7E10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8E959BF257111C0000A7E10 /* Assets.xcassets */; };
 		C8E959C3257111C0000A7E10 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8E959C2257111C0000A7E10 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -20,7 +19,6 @@
 		C8198C9E257500B80003CE05 /* OnboardingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItem.swift; sourceTree = "<group>"; };
 		C8E959B8257111BF000A7E10 /* StacyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StacyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8E959BB257111BF000A7E10 /* StacyDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StacyDemoApp.swift; sourceTree = "<group>"; };
-		C8E959BD257111BF000A7E10 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C8E959BF257111C0000A7E10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8E959C2257111C0000A7E10 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C8E959C4257111C0000A7E10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				C8E959BB257111BF000A7E10 /* StacyDemoApp.swift */,
-				C8E959BD257111BF000A7E10 /* ContentView.swift */,
 				C8E959BF257111C0000A7E10 /* Assets.xcassets */,
 				C8E959C4257111C0000A7E10 /* Info.plist */,
 				C8E959C1257111C0000A7E10 /* Preview Content */,
@@ -146,7 +143,6 @@
 			files = (
 				C8198C9C2574E1600003CE05 /* OnboardingView.swift in Sources */,
 				C8198C9F257500B80003CE05 /* OnboardingItem.swift in Sources */,
-				C8E959BE257111BF000A7E10 /* ContentView.swift in Sources */,
 				C8E959BC257111BF000A7E10 /* StacyDemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -25,6 +25,22 @@ struct OnboardingView: View {
       }
       .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
       .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+      
+      Button(action: {}) {
+        Text("GET STARTED")
+          .frame(maxWidth: .infinity)
+          .padding()
+          .foregroundColor(.white)
+          .background(LinearGradient(gradient: Gradient(colors: [Color("gradient-start"), Color("gradient-end")]), startPoint: .leading, endPoint: .trailing))
+          .cornerRadius(10)
+          .padding(.horizontal, 20)
+      }
+      
+      Button(action: { print("button tapped") }) {
+        Text("Login")
+          .padding()
+          .foregroundColor(Color("text"))
+      }
     }
   }
 }
@@ -39,21 +55,23 @@ fileprivate struct OnboardingCard: View {
   let onboardingItem: OnboardingItem
   
   var body: some View {
-    VStack {
-      Image(onboardingItem.imageName)
-        .resizable()
-        .frame(height: 400)
-        .frame(maxWidth: .infinity)
-      Text(onboardingItem.title)
-        .font(.title)
-        .foregroundColor(Color("title"))
-        .bold()
-        .padding()
-      Text(onboardingItem.description)
-        .multilineTextAlignment(.center)
-        .font(.body)
-        .foregroundColor(Color("text"))
-        .padding(.horizontal, 15)
+    GeometryReader { geometry in
+      VStack {
+        Image(onboardingItem.imageName)
+          .resizable()
+          .frame(height: geometry.size.height / 1.5)
+          .frame(maxWidth: .infinity)
+        Text(onboardingItem.title)
+          .font(.title)
+          .foregroundColor(Color("title"))
+          .bold()
+          .padding()
+        Text(onboardingItem.description)
+          .multilineTextAlignment(.center)
+          .font(.body)
+          .foregroundColor(Color("text"))
+          .padding(.horizontal, 15)
+      }
     }
   }
 }
