@@ -31,7 +31,7 @@ struct OnboardingView: View {
           .frame(maxWidth: .infinity)
           .padding()
           .foregroundColor(.white)
-          .background(LinearGradient(gradient: Gradient(colors: [Color("gradient-start"), Color("gradient-end")]), startPoint: .leading, endPoint: .trailing))
+          .background(LinearGradient(gradient: Gradient(colors: [Color.gradientStart, Color.gradientEnd]), startPoint: .leading, endPoint: .trailing))
           .cornerRadius(10)
           .padding(.horizontal, 20)
       }
@@ -39,7 +39,7 @@ struct OnboardingView: View {
       Button(action: { print("button tapped") }) {
         Text("Login")
           .padding()
-          .foregroundColor(Color("text"))
+          .foregroundColor(.text)
       }
     }
   }
@@ -63,13 +63,13 @@ fileprivate struct OnboardingCard: View {
           .frame(maxWidth: .infinity)
         Text(onboardingItem.title)
           .font(.title)
-          .foregroundColor(Color("title"))
+          .foregroundColor(.title)
           .bold()
           .padding()
         Text(onboardingItem.description)
           .multilineTextAlignment(.center)
           .font(.body)
-          .foregroundColor(Color("text"))
+          .foregroundColor(.text)
           .padding(.horizontal, 15)
       }
     }

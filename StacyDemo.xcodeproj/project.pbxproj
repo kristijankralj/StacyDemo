@@ -12,6 +12,8 @@
 		C8E959BC257111BF000A7E10 /* StacyDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E959BB257111BF000A7E10 /* StacyDemoApp.swift */; };
 		C8E959C0257111C0000A7E10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8E959BF257111C0000A7E10 /* Assets.xcassets */; };
 		C8E959C3257111C0000A7E10 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8E959C2257111C0000A7E10 /* Preview Assets.xcassets */; };
+		C8EE1C7725763B340001FB7B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8EE1C7625763B340001FB7B /* Launch Screen.storyboard */; };
+		C8EE1C7B25763C100001FB7B /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EE1C7A25763C100001FB7B /* ColorExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		C8E959BF257111C0000A7E10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8E959C2257111C0000A7E10 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C8E959C4257111C0000A7E10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8EE1C7625763B340001FB7B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		C8EE1C7A25763C100001FB7B /* ColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				C8E959BB257111BF000A7E10 /* StacyDemoApp.swift */,
+				C8EE1C7A25763C100001FB7B /* ColorExtensions.swift */,
 				C8E959BF257111C0000A7E10 /* Assets.xcassets */,
 				C8E959C4257111C0000A7E10 /* Info.plist */,
 				C8E959C1257111C0000A7E10 /* Preview Content */,
 				C8198C9B2574E1600003CE05 /* OnboardingView.swift */,
 				C8198C9E257500B80003CE05 /* OnboardingItem.swift */,
+				C8EE1C7625763B340001FB7B /* Launch Screen.storyboard */,
 			);
 			path = StacyDemo;
 			sourceTree = "<group>";
@@ -129,6 +135,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8EE1C7725763B340001FB7B /* Launch Screen.storyboard in Resources */,
 				C8E959C3257111C0000A7E10 /* Preview Assets.xcassets in Resources */,
 				C8E959C0257111C0000A7E10 /* Assets.xcassets in Resources */,
 			);
@@ -144,6 +151,7 @@
 				C8198C9C2574E1600003CE05 /* OnboardingView.swift in Sources */,
 				C8198C9F257500B80003CE05 /* OnboardingItem.swift in Sources */,
 				C8E959BC257111BF000A7E10 /* StacyDemoApp.swift in Sources */,
+				C8EE1C7B25763C100001FB7B /* ColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
