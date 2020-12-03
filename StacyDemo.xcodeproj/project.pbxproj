@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C8142FE72578D2CB00B66ACA /* GradientButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8142FE62578D2CB00B66ACA /* GradientButtonStyle.swift */; };
+		C8142FEC2578D90100B66ACA /* ScreenTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8142FEB2578D90100B66ACA /* ScreenTitle.swift */; };
+		C8142FF12578D93F00B66ACA /* EmailField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8142FF02578D93F00B66ACA /* EmailField.swift */; };
 		C8198C9C2574E1600003CE05 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8198C9B2574E1600003CE05 /* OnboardingView.swift */; };
 		C8198C9F257500B80003CE05 /* OnboardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8198C9E257500B80003CE05 /* OnboardingItem.swift */; };
 		C8E959BC257111BF000A7E10 /* StacyDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E959BB257111BF000A7E10 /* StacyDemoApp.swift */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		C8142FE62578D2CB00B66ACA /* GradientButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButtonStyle.swift; sourceTree = "<group>"; };
+		C8142FEB2578D90100B66ACA /* ScreenTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTitle.swift; sourceTree = "<group>"; };
+		C8142FF02578D93F00B66ACA /* EmailField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailField.swift; sourceTree = "<group>"; };
 		C8198C9B2574E1600003CE05 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		C8198C9E257500B80003CE05 /* OnboardingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItem.swift; sourceTree = "<group>"; };
 		C8E959B8257111BF000A7E10 /* StacyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StacyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +53,22 @@
 				C8142FE62578D2CB00B66ACA /* GradientButtonStyle.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		C8142FEA2578D8E600B66ACA /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				C8142FEB2578D90100B66ACA /* ScreenTitle.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		C8142FEF2578D92D00B66ACA /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				C8142FF02578D93F00B66ACA /* EmailField.swift */,
+			);
+			path = ReusableViews;
 			sourceTree = "<group>";
 		};
 		C8E959AF257111BF000A7E10 = {
@@ -100,6 +120,8 @@
 		C8EE1C8125764EFB0001FB7B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C8142FEF2578D92D00B66ACA /* ReusableViews */,
+				C8142FEA2578D8E600B66ACA /* SubViews */,
 				C8142FE52578D2B300B66ACA /* Modifiers */,
 				C8EE1C8225764F1E0001FB7B /* Extensions */,
 				C8EE1C8325764F290001FB7B /* Models */,
@@ -220,10 +242,12 @@
 			files = (
 				C8198C9C2574E1600003CE05 /* OnboardingView.swift in Sources */,
 				C8198C9F257500B80003CE05 /* OnboardingItem.swift in Sources */,
+				C8142FEC2578D90100B66ACA /* ScreenTitle.swift in Sources */,
 				C8E959BC257111BF000A7E10 /* StacyDemoApp.swift in Sources */,
 				C8142FE72578D2CB00B66ACA /* GradientButtonStyle.swift in Sources */,
 				C8EE1C7E257645C90001FB7B /* LoginView.swift in Sources */,
 				C8EE1C7B25763C100001FB7B /* ColorExtensions.swift in Sources */,
+				C8142FF12578D93F00B66ACA /* EmailField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

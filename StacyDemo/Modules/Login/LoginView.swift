@@ -14,15 +14,16 @@ struct LoginView: View {
     var body: some View {
       VStack {
         ScreenTitle("Hi,\nWelcome back!")
-        VStack {
-          TextField("Email address", text: $email)
-            .font(.title3)
-            .padding(8)
-            .overlay(RoundedRectangle(cornerRadius: 8)
-                      .stroke(Color.text.opacity(0.7), lineWidth: 1))
+        VStack(spacing: 16) {
+          EmailField(email: $email)
             .padding(.horizontal, 20)
           
+          HStack {
+            Image(systemName: "key")
+              .foregroundColor(Color.text.opacity(0.7))
           SecureField("Password", text: $password)
+            .padding(.leading, 8)
+          }
             .font(.title3)
             .padding(8)
             .overlay(RoundedRectangle(cornerRadius: 8)
@@ -43,24 +44,4 @@ struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
     }
-}
-
-struct ScreenTitle: View {
-  let title: String
-  
-  init(_ title: String) {
-    self.title = title
-  }
-  
-  var body: some View {
-    HStack {
-      Text(title)
-        .font(.largeTitle)
-        .bold()
-        .foregroundColor(.title)
-        .padding(.bottom, 30)
-        .padding(.leading, 20)
-      Spacer()
-    }
-  }
 }
