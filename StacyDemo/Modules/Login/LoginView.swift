@@ -13,15 +13,7 @@ struct LoginView: View {
   
     var body: some View {
       VStack {
-        HStack {
-          Text("Hi,\nWelcome back!")
-            .font(.largeTitle)
-            .bold()
-            .foregroundColor(.title)
-            .padding(.bottom, 30)
-            .padding(.leading, 20)
-          Spacer()
-        }
+        ScreenTitle("Hi,\nWelcome back!")
         VStack {
           TextField("Email address", text: $email)
             .font(.title3)
@@ -37,6 +29,12 @@ struct LoginView: View {
                       .stroke(Color.text.opacity(0.7), lineWidth: 1))
             .padding(.horizontal, 20)
         }
+        
+        Button(action: {}) {
+          Text("LOGIN")
+            .textStyle(GradientButtonStyle())
+        }
+
       }
     }
 }
@@ -45,4 +43,24 @@ struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
     }
+}
+
+struct ScreenTitle: View {
+  let title: String
+  
+  init(_ title: String) {
+    self.title = title
+  }
+  
+  var body: some View {
+    HStack {
+      Text(title)
+        .font(.largeTitle)
+        .bold()
+        .foregroundColor(.title)
+        .padding(.bottom, 30)
+        .padding(.leading, 20)
+      Spacer()
+    }
+  }
 }
