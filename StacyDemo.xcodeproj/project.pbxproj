@@ -60,15 +60,12 @@
 		C8E959BA257111BF000A7E10 /* StacyDemo */ = {
 			isa = PBXGroup;
 			children = (
-				C8E959BB257111BF000A7E10 /* StacyDemoApp.swift */,
-				C8EE1C7A25763C100001FB7B /* ColorExtensions.swift */,
+				C8EE1C8025764EDC0001FB7B /* Application */,
+				C8EE1C8125764EFB0001FB7B /* Common */,
+				C8EE1C8425764F3A0001FB7B /* Modules */,
 				C8E959BF257111C0000A7E10 /* Assets.xcassets */,
 				C8E959C4257111C0000A7E10 /* Info.plist */,
 				C8E959C1257111C0000A7E10 /* Preview Content */,
-				C8198C9B2574E1600003CE05 /* OnboardingView.swift */,
-				C8198C9E257500B80003CE05 /* OnboardingItem.swift */,
-				C8EE1C7625763B340001FB7B /* Launch Screen.storyboard */,
-				C8EE1C7D257645C90001FB7B /* LoginView.swift */,
 			);
 			path = StacyDemo;
 			sourceTree = "<group>";
@@ -79,6 +76,65 @@
 				C8E959C2257111C0000A7E10 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C8EE1C8025764EDC0001FB7B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				C8E959BB257111BF000A7E10 /* StacyDemoApp.swift */,
+				C8EE1C7625763B340001FB7B /* Launch Screen.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		C8EE1C8125764EFB0001FB7B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C8EE1C8225764F1E0001FB7B /* Extensions */,
+				C8EE1C8325764F290001FB7B /* Models */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C8EE1C8225764F1E0001FB7B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C8EE1C7A25763C100001FB7B /* ColorExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C8EE1C8325764F290001FB7B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C8198C9E257500B80003CE05 /* OnboardingItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C8EE1C8425764F3A0001FB7B /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C8EE1C8525764F660001FB7B /* Onboarding */,
+				C8EE1C8625764F710001FB7B /* Login */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		C8EE1C8525764F660001FB7B /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				C8198C9B2574E1600003CE05 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		C8EE1C8625764F710001FB7B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C8EE1C7D257645C90001FB7B /* LoginView.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
