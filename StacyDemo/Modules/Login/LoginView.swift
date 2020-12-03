@@ -12,30 +12,53 @@ struct LoginView: View {
   @State var password: String = ""
   
     var body: some View {
-      VStack {
-        ScreenTitle("Hi,\nWelcome back!")
-        VStack(spacing: 16) {
-          EmailField(email: $email)
-            .padding(.horizontal, 20)
+      NavigationView {
+        VStack {
+          ScreenTitle("Hi,\nWelcome back!")
+          VStack(spacing: 16) {
+            EmailField(email: $email)
+              .padding(.horizontal, 20)
+            
+            HStack {
+              Image(systemName: "key")
+                .foregroundColor(Color.text.opacity(0.7))
+            SecureField("Password", text: $password)
+              .padding(.leading, 8)
+            }
+              .font(.title3)
+              .padding(8)
+              .overlay(RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color.text.opacity(0.7), lineWidth: 1))
+              .padding(.horizontal, 20)
+          }
           
           HStack {
-            Image(systemName: "key")
-              .foregroundColor(Color.text.opacity(0.7))
-          SecureField("Password", text: $password)
-            .padding(.leading, 8)
+            Spacer()
+            NavigationLink(destination: PasswordResetView()) {
+              Text("Forgot Password?")
+                .foregroundColor(.text)
+            }
           }
-            .font(.title3)
-            .padding(8)
-            .overlay(RoundedRectangle(cornerRadius: 8)
-                      .stroke(Color.text.opacity(0.7), lineWidth: 1))
-            .padding(.horizontal, 20)
+          .padding(.top, 10)
+          .padding(.horizontal, 20)
+          
+          Button(action: {}) {
+            Text("LOGIN")
+              .textStyle(GradientButtonStyle())
+              .padding(.top, 20)
+          }
+          Spacer()
+          HStack {
+            Text("Don't have Stacy account?")
+              .foregroundColor(.title)
+            NavigationLink(
+              destination: RegisterTypeView()) {
+              Text("Sign Up")
+                .foregroundColor(.blue)
+            }
+          }
+          .padding(.bottom, 20)
         }
-        
-        Button(action: {}) {
-          Text("LOGIN")
-            .textStyle(GradientButtonStyle())
-        }
-
       }
     }
 }

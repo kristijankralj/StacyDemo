@@ -10,6 +10,8 @@
 		C8142FE72578D2CB00B66ACA /* GradientButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8142FE62578D2CB00B66ACA /* GradientButtonStyle.swift */; };
 		C8142FEC2578D90100B66ACA /* ScreenTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8142FEB2578D90100B66ACA /* ScreenTitle.swift */; };
 		C8142FF12578D93F00B66ACA /* EmailField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8142FF02578D93F00B66ACA /* EmailField.swift */; };
+		C8142FF62578DB0C00B66ACA /* PasswordResetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8142FF52578DB0C00B66ACA /* PasswordResetView.swift */; };
+		C8142FFB2578DB2C00B66ACA /* RegisterTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8142FFA2578DB2C00B66ACA /* RegisterTypeView.swift */; };
 		C8198C9C2574E1600003CE05 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8198C9B2574E1600003CE05 /* OnboardingView.swift */; };
 		C8198C9F257500B80003CE05 /* OnboardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8198C9E257500B80003CE05 /* OnboardingItem.swift */; };
 		C8E959BC257111BF000A7E10 /* StacyDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E959BB257111BF000A7E10 /* StacyDemoApp.swift */; };
@@ -24,6 +26,8 @@
 		C8142FE62578D2CB00B66ACA /* GradientButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButtonStyle.swift; sourceTree = "<group>"; };
 		C8142FEB2578D90100B66ACA /* ScreenTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTitle.swift; sourceTree = "<group>"; };
 		C8142FF02578D93F00B66ACA /* EmailField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailField.swift; sourceTree = "<group>"; };
+		C8142FF52578DB0C00B66ACA /* PasswordResetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetView.swift; sourceTree = "<group>"; };
+		C8142FFA2578DB2C00B66ACA /* RegisterTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTypeView.swift; sourceTree = "<group>"; };
 		C8198C9B2574E1600003CE05 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		C8198C9E257500B80003CE05 /* OnboardingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItem.swift; sourceTree = "<group>"; };
 		C8E959B8257111BF000A7E10 /* StacyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StacyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +73,22 @@
 				C8142FF02578D93F00B66ACA /* EmailField.swift */,
 			);
 			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		C8142FF42578DAF700B66ACA /* PasswordReset */ = {
+			isa = PBXGroup;
+			children = (
+				C8142FF52578DB0C00B66ACA /* PasswordResetView.swift */,
+			);
+			path = PasswordReset;
+			sourceTree = "<group>";
+		};
+		C8142FF92578DB1800B66ACA /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				C8142FFA2578DB2C00B66ACA /* RegisterTypeView.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		C8E959AF257111BF000A7E10 = {
@@ -148,6 +168,8 @@
 		C8EE1C8425764F3A0001FB7B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C8142FF92578DB1800B66ACA /* Register */,
+				C8142FF42578DAF700B66ACA /* PasswordReset */,
 				C8EE1C8525764F660001FB7B /* Onboarding */,
 				C8EE1C8625764F710001FB7B /* Login */,
 			);
@@ -243,9 +265,11 @@
 				C8198C9C2574E1600003CE05 /* OnboardingView.swift in Sources */,
 				C8198C9F257500B80003CE05 /* OnboardingItem.swift in Sources */,
 				C8142FEC2578D90100B66ACA /* ScreenTitle.swift in Sources */,
+				C8142FFB2578DB2C00B66ACA /* RegisterTypeView.swift in Sources */,
 				C8E959BC257111BF000A7E10 /* StacyDemoApp.swift in Sources */,
 				C8142FE72578D2CB00B66ACA /* GradientButtonStyle.swift in Sources */,
 				C8EE1C7E257645C90001FB7B /* LoginView.swift in Sources */,
+				C8142FF62578DB0C00B66ACA /* PasswordResetView.swift in Sources */,
 				C8EE1C7B25763C100001FB7B /* ColorExtensions.swift in Sources */,
 				C8142FF12578D93F00B66ACA /* EmailField.swift in Sources */,
 			);
