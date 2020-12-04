@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct OnboardingView: View {
+  @State private var showLogin = false
   
   var onboardingData: [OnboardingItem] = [
     OnboardingItem(imageName: "onb_find_place", title: "Find Places to Live", description: "Find great verified places & people to share the home with."),
@@ -31,11 +32,14 @@ struct OnboardingView: View {
           .textStyle(GradientButtonStyle())
       }
       
-      Button(action: { print("button tapped") }) {
+      Button(action: { showLogin.toggle() }) {
         Text("Login")
           .padding()
           .foregroundColor(.text)
       }
+    }
+    .fullScreenCover(isPresented: $showLogin) {
+      LoginView()
     }
   }
 }
