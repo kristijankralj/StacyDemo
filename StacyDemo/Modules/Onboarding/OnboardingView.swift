@@ -9,12 +9,24 @@ import SwiftUI
 
 struct OnboardingView: View {
   @State private var showLogin = false
+  @State private var animateLogin = false
+  @State private var animate = false
   
   var onboardingData: [OnboardingItem] = [
     OnboardingItem(imageName: "onb_find_place", title: "Find Places to Live", description: "Find great verified places & people to share the home with."),
     OnboardingItem(imageName: "onb_match", title: "Match Your Preferencs", description: "Tell us your preferences and match with the right people."),
     OnboardingItem(imageName: "onb_like", title: "Like-minded People", description: "Live together with people who will inspire like you.")
   ]
+  
+  func animateViews(){
+    withAnimation(Animation.interpolatingSpring(stiffness: 40, damping: 8)) {
+      animate = true
+    }
+    
+    withAnimation(.linear(duration: 2)) {
+      animateLogin = true
+    }
+  }
   
   var body: some View {
     VStack {
@@ -26,17 +38,25 @@ struct OnboardingView: View {
       }
       .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
       .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+      .offset(x: animate ? 0 : 400)
       
       Button(action: {}) {
         Text("GET STARTED")
           .textStyle(GradientButtonStyle())
       }
+      .offset(x: animate ? 0 : -400)
+      .padding(.top, 25)
+      .padding(.bottom, 20)
       
       Button(action: { showLogin.toggle() }) {
         Text("Login")
           .padding()
           .foregroundColor(.text)
+          .opacity(animateLogin ? 1 : 0)
       }
+    }
+    .onAppear {
+      animateViews()
     }
     .fullScreenCover(isPresented: $showLogin) {
       LoginView()
