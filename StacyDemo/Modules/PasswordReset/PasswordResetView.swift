@@ -21,21 +21,25 @@ struct PasswordResetView: View {
   }
   
     var body: some View {
-      VStack {
-        ScreenTitle("Forgot password?")
-        Text("Please enter your email below to receive your password reset instructions.")
-          .foregroundColor(.text)
-          .padding(.horizontal,20)
-        EmailField(email: $email)
-          .padding(20)
-        Button(action: { showingAlert.toggle() }) {
-          Text("SEND REQUEST")
-            .textStyle(GradientButtonStyle())
-        }
-        Spacer()
-      }//vstack
-      .alert(isPresented: $showingAlert) {
-        displayAlert()
+      ZStack {
+        AnimatedWaveBackground()
+        
+        VStack {
+          ScreenTitle("Forgot password?")
+          Text("Please enter your email below to receive your password reset instructions.")
+            .foregroundColor(.text)
+            .padding(.horizontal,20)
+          EmailField(email: $email)
+            .padding(20)
+          Button(action: { showingAlert.toggle() }) {
+            Text("SEND REQUEST")
+              .textStyle(GradientButtonStyle())
+          }
+          Spacer()
+        }//vstack
+        .alert(isPresented: $showingAlert) {
+          displayAlert()
+      }
       }
     }
 }
