@@ -46,10 +46,13 @@ struct RegisterTypeView: View {
         }
         .frame(maxHeight: .infinity)
       }
+      .navigationBarHidden(true)
     }
 }
 
 fileprivate struct RegisterTypeCard: View {
+  @EnvironmentObject var onboardingDetails: UserOnboardingDetails
+  @State private var navigate = false
   
   let gradientStartColor: Color
   let gradientEndColor: Color
@@ -57,25 +60,30 @@ fileprivate struct RegisterTypeCard: View {
   let cardText: String
   
   var body: some View {
-    NavigationLink(destination: RegisterPlaceView()) {
-      ZStack {
-        Rectangle()
-          .fill(LinearGradient(gradient: Gradient(colors: [gradientStartColor, gradientEndColor]),
-                               startPoint: .leading,
-                               endPoint: .bottom))
-          .frame(width: 150, height: 150)
-          .cornerRadius(6)
-        Image(image)
-          .resizable()
-          .foregroundColor(.white)
-          .frame(width: 60, height: 60)
-          .offset(y: -20)
-        Text(cardText)
-          .foregroundColor(.white)
-          .bold()
-          .offset(y: 35)
+    NavigationLink(destination: RegisterPlaceView(), isActive: $navigate) {
+      Button(action: {
+        onboardingDetails.roomType = cardText
+        navigate = true
+      } ) {
+        ZStack {
+          Rectangle()
+            .fill(LinearGradient(gradient: Gradient(colors: [gradientStartColor, gradientEndColor]),
+                                 startPoint: .leading,
+                                 endPoint: .bottom))
+            .frame(width: 150, height: 150)
+            .cornerRadius(6)
+          Image(image)
+            .resizable()
+            .foregroundColor(.white)
+            .frame(width: 60, height: 60)
+            .offset(y: -20)
+          Text(cardText)
+            .foregroundColor(.white)
+            .bold()
+            .offset(y: 35)
+        }
+        .shadow(radius: 10)
       }
-      .shadow(radius: 10)
     }
   }
 }
@@ -83,5 +91,6 @@ fileprivate struct RegisterTypeCard: View {
 struct RegisterTypeView_Previews: PreviewProvider {
     static var previews: some View {
         RegisterTypeView()
+          .environmentObject(UserOnboardingDetails())
     }
 }

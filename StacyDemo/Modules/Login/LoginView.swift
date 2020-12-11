@@ -42,7 +42,8 @@ struct LoginView: View {
             Text("Don't have Stacy account?")
               .foregroundColor(.title)
             NavigationLink(
-              destination: RegisterTypeView()) {
+              destination: RegisterTypeView()
+                .environmentObject(UserOnboardingDetails())) {
               Text("Sign Up")
                 .foregroundColor(.blue)
             }
