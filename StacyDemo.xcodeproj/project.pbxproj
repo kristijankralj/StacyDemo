@@ -14,6 +14,7 @@
 		C8142FFB2578DB2C00B66ACA /* RegisterTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8142FFA2578DB2C00B66ACA /* RegisterTypeView.swift */; };
 		C8198C9C2574E1600003CE05 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8198C9B2574E1600003CE05 /* OnboardingView.swift */; };
 		C8198C9F257500B80003CE05 /* OnboardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8198C9E257500B80003CE05 /* OnboardingItem.swift */; };
+		C81DB4B82582171F0010BFD3 /* RegisterPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81DB4B72582171F0010BFD3 /* RegisterPlaceView.swift */; };
 		C83D0A2E2580B6210000B751 /* AnimatedWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83D0A2D2580B6210000B751 /* AnimatedWave.swift */; };
 		C83D0A312580BF690000B751 /* AnimatedWaveBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83D0A302580BF690000B751 /* AnimatedWaveBackground.swift */; };
 		C8E959BC257111BF000A7E10 /* StacyDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E959BB257111BF000A7E10 /* StacyDemoApp.swift */; };
@@ -32,6 +33,7 @@
 		C8142FFA2578DB2C00B66ACA /* RegisterTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTypeView.swift; sourceTree = "<group>"; };
 		C8198C9B2574E1600003CE05 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		C8198C9E257500B80003CE05 /* OnboardingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItem.swift; sourceTree = "<group>"; };
+		C81DB4B72582171F0010BFD3 /* RegisterPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlaceView.swift; sourceTree = "<group>"; };
 		C83D0A2D2580B6210000B751 /* AnimatedWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedWave.swift; sourceTree = "<group>"; };
 		C83D0A302580BF690000B751 /* AnimatedWaveBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedWaveBackground.swift; sourceTree = "<group>"; };
 		C8E959B8257111BF000A7E10 /* StacyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StacyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				C8142FFA2578DB2C00B66ACA /* RegisterTypeView.swift */,
+				C81DB4B72582171F0010BFD3 /* RegisterPlaceView.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				C8198C9F257500B80003CE05 /* OnboardingItem.swift in Sources */,
 				C8142FEC2578D90100B66ACA /* ScreenTitle.swift in Sources */,
 				C83D0A2E2580B6210000B751 /* AnimatedWave.swift in Sources */,
+				C81DB4B82582171F0010BFD3 /* RegisterPlaceView.swift in Sources */,
 				C8142FFB2578DB2C00B66ACA /* RegisterTypeView.swift in Sources */,
 				C8E959BC257111BF000A7E10 /* StacyDemoApp.swift in Sources */,
 				C8142FE72578D2CB00B66ACA /* GradientButtonStyle.swift in Sources */,
