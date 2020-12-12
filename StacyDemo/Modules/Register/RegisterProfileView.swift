@@ -11,6 +11,10 @@ struct RegisterProfileView: View {
   @State var fullName = ""
   @State var phoneNumber = ""
   @State var selectedGender = 0
+  @State var email = ""
+  @State var password = ""
+  @State var confirmPassword = ""
+  @State var moreAboutYou = ""
   
   let gender = ["Male", "Female", "Other"]
   
@@ -40,9 +44,40 @@ struct RegisterProfileView: View {
             .background(Color.pickerForeground)
             .cornerRadius(8)
           }
+          
+          TextField("Email", text: $email)
+            .disableAutocorrection(true)
+            .keyboardType(.emailAddress)
+            .autocapitalization(.none)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+          
+          SecureField("Password", text: $password)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+          
+          SecureField("Confirm Password", text: $confirmPassword)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+          
+          VStack(alignment: .leading) {
+            Text("Tell me more about you")
+              .foregroundColor(.text)
+            TextEditor(text: $moreAboutYou)
+              .frame(height: 100, alignment: .topLeading)
+              .disableAutocorrection(true)
+              .padding(8)
+              .overlay(RoundedRectangle(cornerRadius: 6)
+                        .stroke(Color.gray.opacity(0.3), lineWidth: 1))
+          }
+          
+          NavigationLink(destination: HomeView()) {
+            Text("REGISTER")
+              .textStyle(GradientButtonStyle())
+              .padding(.horizontal, -20)
+              .padding(.bottom)
+          }
         }
         .padding()
       }
+      .navigationTitle("Complete your profile")
     }
 }
 
