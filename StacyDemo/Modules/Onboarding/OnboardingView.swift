@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OnboardingView: View {
   @State private var showLogin = false
+  @State private var showRegister = false
   @State private var animateLogin = false
   @State private var animate = false
   
@@ -29,38 +30,44 @@ struct OnboardingView: View {
   }
   
   var body: some View {
-    VStack {
-      TabView {
-        ForEach(0 ..< onboardingData.count) { index in
-          let element = onboardingData[index]
-          OnboardingCard(onboardingItem: element)
+    ZStack {
+      VStack {
+        TabView {
+          ForEach(0 ..< onboardingData.count) { index in
+            let element = onboardingData[index]
+            OnboardingCard(onboardingItem: element)
+          }
+        }
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
+        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+        .offset(x: animate ? 0 : 400)
+        
+        Button(action: { showRegister.toggle() }) {
+          Text("GET STARTED")
+            .textStyle(GradientButtonStyle())
+        }
+        .offset(x: animate ? 0 : -400)
+        .padding(.top, 25)
+        .padding(.bottom, 20)
+        
+        Button(action: { showLogin.toggle() }) {
+          Text("Login")
+            .padding()
+            .foregroundColor(.text)
+            .opacity(animateLogin ? 1 : 0)
         }
       }
-      .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
-      .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-      .offset(x: animate ? 0 : 400)
-      
-      Button(action: {}) {
-        Text("GET STARTED")
-          .textStyle(GradientButtonStyle())
+      .onAppear {
+        animateViews()
       }
-      .offset(x: animate ? 0 : -400)
-      .padding(.top, 25)
-      .padding(.bottom, 20)
-      
-      Button(action: { showLogin.toggle() }) {
-        Text("Login")
-          .padding()
-          .foregroundColor(.text)
-          .opacity(animateLogin ? 1 : 0)
+      .fullScreenCover(isPresented: $showLogin) {
+        LoginView()
+    }//vstack
+      if showRegister {
+        RegisterTypeView()
+          .environmentObject(UserOnboardingDetails())
       }
-    }
-    .onAppear {
-      animateViews()
-    }
-    .fullScreenCover(isPresented: $showLogin) {
-      LoginView()
-    }
+    }//zstack
   }
 }
 
