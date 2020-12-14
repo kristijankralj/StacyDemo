@@ -18,62 +18,95 @@ struct RegisterProfileView: View {
   
   let gender = ["Male", "Female", "Other"]
   
-    var body: some View {
+  fileprivate func fullNameTextField() -> some View {
+    TextField("Full Name", text: $fullName,
+                     onCommit: { hideKeyboard() })
+      .disableAutocorrection(true)
+      .textFieldStyle(RoundedBorderTextFieldStyle())
+  }
+  
+  fileprivate func phoneNumberTextField() -> some View {
+     TextField("Phone Number", text: $phoneNumber)
+      .disableAutocorrection(true)
+      .keyboardType(.phonePad)
+      .textFieldStyle(RoundedBorderTextFieldStyle())
+  }
+  
+  fileprivate func genderPicker() -> some View {
+    VStack(alignment: .leading) {
+      Text("Gender")
+        .foregroundColor(.text)
+      
+      Picker(selection: $selectedGender,
+             label: Text("Gender")) {
+        ForEach(0..<gender.count) { index in
+          Text(gender[index]).tag(index)
+        }
+      }
+      .pickerStyle(SegmentedPickerStyle())
+      .background(Color.pickerForeground)
+      .cornerRadius(8)
+    }
+  }
+  
+  fileprivate func emailAddressTextField() -> some View {
+    TextField("Email", text: $email)
+      .disableAutocorrection(true)
+      .keyboardType(.emailAddress)
+      .autocapitalization(.none)
+      .textFieldStyle(RoundedBorderTextFieldStyle())
+  }
+  
+  fileprivate func passwordSecureField() -> some View {
+     SecureField("Password", text: $password)
+      .textFieldStyle(RoundedBorderTextFieldStyle())
+  }
+  
+  fileprivate func confirmPasswordSecureField() -> some View {
+    SecureField("Confirm Password", text: $confirmPassword)
+      .textFieldStyle(RoundedBorderTextFieldStyle())
+  }
+  
+  fileprivate func moreAboutYouTextEditor() -> some View {
+    VStack(alignment: .leading) {
+      Text("Tell me more about you")
+        .foregroundColor(.text)
+      TextEditor(text: $moreAboutYou)
+        .frame(height: 100, alignment: .topLeading)
+        .disableAutocorrection(true)
+        .padding(8)
+        .overlay(RoundedRectangle(cornerRadius: 6)
+                  .stroke(Color.gray.opacity(0.3), lineWidth: 1))
+    }
+  }
+  
+  fileprivate func registerButton() -> some View {
+    NavigationLink(destination: HomeView()) {
+      Text("REGISTER")
+        .textStyle(GradientButtonStyle())
+        .padding(.horizontal, -20)
+        .padding(.bottom)
+    }
+  }
+  
+  var body: some View {
       ScrollView {
         VStack(spacing: 16) {
-          TextField("Full Name", text: $fullName, onCommit: { hideKeyboard() })
-            .disableAutocorrection(true)
-            .textFieldStyle(RoundedBorderTextFieldStyle())
+          fullNameTextField()
           
-          TextField("Phone Number", text: $phoneNumber)
-            .disableAutocorrection(true)
-            .keyboardType(.phonePad)
-            .textFieldStyle(RoundedBorderTextFieldStyle())
+          phoneNumberTextField()
           
-          VStack(alignment: .leading) {
-            Text("Gender")
-              .foregroundColor(.text)
-            
-            Picker(selection: $selectedGender,
-                   label: Text("Gender")) {
-              ForEach(0..<gender.count) { index in
-                Text(gender[index]).tag(index)
-              }
-            }
-            .pickerStyle(SegmentedPickerStyle())
-            .background(Color.pickerForeground)
-            .cornerRadius(8)
-          }
+          genderPicker()
           
-          TextField("Email", text: $email)
-            .disableAutocorrection(true)
-            .keyboardType(.emailAddress)
-            .autocapitalization(.none)
-            .textFieldStyle(RoundedBorderTextFieldStyle())
+          emailAddressTextField()
           
-          SecureField("Password", text: $password)
-            .textFieldStyle(RoundedBorderTextFieldStyle())
+          passwordSecureField()
           
-          SecureField("Confirm Password", text: $confirmPassword)
-            .textFieldStyle(RoundedBorderTextFieldStyle())
+          confirmPasswordSecureField()
           
-          VStack(alignment: .leading) {
-            Text("Tell me more about you")
-              .foregroundColor(.text)
-            TextEditor(text: $moreAboutYou)
-              .frame(height: 100, alignment: .topLeading)
-              .disableAutocorrection(true)
-              .padding(8)
-              .overlay(RoundedRectangle(cornerRadius: 6)
-                        .stroke(Color.gray.opacity(0.3), lineWidth: 1))
-          }
+          moreAboutYouTextEditor()
           
-          NavigationLink(destination: HomeView()) {
-            Text("REGISTER")
-              .textStyle(GradientButtonStyle())
-              .padding(.horizontal, -20)
-              .padding(.bottom)
-          }
+          registerButton()
         }
         .padding()
         .onTapGesture {
