@@ -21,6 +21,7 @@
 		C83D0A2E2580B6210000B751 /* AnimatedWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83D0A2D2580B6210000B751 /* AnimatedWave.swift */; };
 		C83D0A312580BF690000B751 /* AnimatedWaveBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83D0A302580BF690000B751 /* AnimatedWaveBackground.swift */; };
 		C8CEED152584E33900576A71 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CEED142584E33900576A71 /* HomeView.swift */; };
+		C8E63ACF25874CDA00B84FD6 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E63ACE25874CDA00B84FD6 /* ViewExtensions.swift */; };
 		C8E959BC257111BF000A7E10 /* StacyDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E959BB257111BF000A7E10 /* StacyDemoApp.swift */; };
 		C8E959C0257111C0000A7E10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8E959BF257111C0000A7E10 /* Assets.xcassets */; };
 		C8E959C3257111C0000A7E10 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8E959C2257111C0000A7E10 /* Preview Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		C83D0A2D2580B6210000B751 /* AnimatedWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedWave.swift; sourceTree = "<group>"; };
 		C83D0A302580BF690000B751 /* AnimatedWaveBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedWaveBackground.swift; sourceTree = "<group>"; };
 		C8CEED142584E33900576A71 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C8E63ACE25874CDA00B84FD6 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		C8E959B8257111BF000A7E10 /* StacyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StacyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8E959BB257111BF000A7E10 /* StacyDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StacyDemoApp.swift; sourceTree = "<group>"; };
 		C8E959BF257111C0000A7E10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				C8EE1C7A25763C100001FB7B /* ColorExtensions.swift */,
+				C8E63ACE25874CDA00B84FD6 /* ViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				C8198C9F257500B80003CE05 /* OnboardingItem.swift in Sources */,
 				C8142FEC2578D90100B66ACA /* ScreenTitle.swift in Sources */,
 				C83D0A2E2580B6210000B751 /* AnimatedWave.swift in Sources */,
+				C8E63ACF25874CDA00B84FD6 /* ViewExtensions.swift in Sources */,
 				C82757692583640200054926 /* RegisterMoveDetailsView.swift in Sources */,
 				C8CEED152584E33900576A71 /* HomeView.swift in Sources */,
 				C827576C2583642800054926 /* RegisterProfileView.swift in Sources */,

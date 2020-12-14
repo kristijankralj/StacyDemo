@@ -21,7 +21,7 @@ struct RegisterProfileView: View {
     var body: some View {
       ScrollView {
         VStack(spacing: 16) {
-          TextField("Full Name", text: $fullName)
+          TextField("Full Name", text: $fullName, onCommit: { hideKeyboard() })
             .disableAutocorrection(true)
             .textFieldStyle(RoundedBorderTextFieldStyle())
           
@@ -76,6 +76,9 @@ struct RegisterProfileView: View {
           }
         }
         .padding()
+        .onTapGesture {
+          hideKeyboard()
+        }
       }
       .navigationTitle("Complete your profile")
     }
