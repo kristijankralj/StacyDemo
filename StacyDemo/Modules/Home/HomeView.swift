@@ -9,7 +9,13 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
+      ZStack {
+        Color.primary
+          .colorInvert()
+          .ignoresSafeArea(.all)
+        
         Text("Hello, Home!")
+      }
     }
 }
 

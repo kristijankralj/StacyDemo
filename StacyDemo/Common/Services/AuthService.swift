@@ -17,6 +17,7 @@ struct AuthService {
                  andPassword password: String,
                  completion: @escaping (_ error: Error?) -> Void) {
     //TODO implement with firebase
+    completion(nil)
   }
   
   func sendPasswordReset(email: String, completion: @escaping () -> Void) {

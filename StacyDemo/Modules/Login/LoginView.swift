@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct LoginView: View {
-  @State var email: String = ""
-  @State var password: String = ""
   @State private var showLogin = false
+  
+  @StateObject private var loginViewModel = LoginViewModel()
   
   let duration: Double = 0.3
   let delay = 0.3
@@ -25,36 +25,44 @@ struct LoginView: View {
   }
   
     var body: some View {
-      NavigationView {
-        VStack {
-          ScreenTitle("Hi,\nWelcome back!")
-          LoginFields(email: $email, password: $password)
-          
-          Button(action: {}) {
-            Text("LOGIN")
-              .textStyle(GradientButtonStyle())
-              .padding(.top, 20)
-              .opacity(showLogin ? 1 : 0)
-              .offset(x: showLogin ? 0 : -200)
-          }
-          Spacer()
-          HStack {
-            Text("Don't have Stacy account?")
-              .foregroundColor(.title)
-            NavigationLink(
-              destination: RegisterTypeView()
-                .environmentObject(UserOnboardingDetails())) {
-              Text("Sign Up")
-                .foregroundColor(.blue)
+      ZStack {
+        NavigationView {
+          VStack {
+            ScreenTitle("Hi,\nWelcome back!")
+            LoginFields(email: $loginViewModel.email, password: $loginViewModel.password)
+            
+            Button(action: {
+              hideKeyboard()
+              loginViewModel.loginUser()
+            }) {
+              Text("LOGIN")
+                .textStyle(GradientButtonStyle())
+                .padding(.top, 20)
+                .opacity(showLogin ? 1 : 0)
+                .offset(x: showLogin ? 0 : -200)
             }
+            Spacer()
+            HStack {
+              Text("Don't have Stacy account?")
+                .foregroundColor(.title)
+              NavigationLink(
+                destination: RegisterTypeView()
+                  .environmentObject(UserOnboardingDetails())) {
+                Text("Sign Up")
+                  .foregroundColor(.blue)
+              }
+            }
+            .padding(.bottom, 20)
+            .opacity(showLogin ? 1 : 0)
           }
-          .padding(.bottom, 20)
-          .opacity(showLogin ? 1 : 0)
+          .onAppear {
+              animateViews()
+          }
+        }//navigationview
+        if loginViewModel.loginSuccessful {
+          HomeView()
         }
-        .onAppear {
-            animateViews()
-        }
-      }
+      }//zstack
     }
 }
 
