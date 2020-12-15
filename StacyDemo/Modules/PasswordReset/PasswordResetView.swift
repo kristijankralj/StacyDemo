@@ -9,8 +9,8 @@ import SwiftUI
 
 struct PasswordResetView: View {
   @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-  @State private var email : String = ""
-  @State private var showingAlert: Bool = false
+
+  @StateObject private var passwordResetViewModel = PasswordResetViewModel()
   
   private func displayAlert() -> Alert {
     Alert(title: Text("Success"),
@@ -29,15 +29,15 @@ struct PasswordResetView: View {
           Text("Please enter your email below to receive your password reset instructions.")
             .foregroundColor(.text)
             .padding(.horizontal,20)
-          EmailField(email: $email)
+          EmailField(email: $passwordResetViewModel.email)
             .padding(20)
-          Button(action: { showingAlert.toggle() }) {
+          Button(action: { passwordResetViewModel.sendPasswordReset() }) {
             Text("SEND REQUEST")
               .textStyle(GradientButtonStyle())
           }
           Spacer()
         }//vstack
-        .alert(isPresented: $showingAlert) {
+        .alert(isPresented: $passwordResetViewModel.showingAlert) {
           displayAlert()
       }
       }
