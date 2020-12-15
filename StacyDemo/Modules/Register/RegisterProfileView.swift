@@ -74,11 +74,13 @@ struct RegisterProfileView: View {
   }
   
   fileprivate func registerButton() -> some View {
-    NavigationLink(destination: HomeView()) {
-      Text("REGISTER")
-        .textStyle(GradientButtonStyle())
-        .padding(.horizontal, -20)
-        .padding(.bottom)
+    NavigationLink(destination: HomeView(), isActive: $registerViewModel.registrationSuccessful) {
+      Button(action: { registerViewModel.register() }) {
+        Text("REGISTER")
+          .textStyle(GradientButtonStyle())
+          .padding(.horizontal, -20)
+          .padding(.bottom)
+      }
     }
   }
   
@@ -104,6 +106,10 @@ struct RegisterProfileView: View {
         .padding()
         .onTapGesture {
           hideKeyboard()
+        }
+        .alert(isPresented: $registerViewModel.errorOccured) {
+          Alert(title: Text("Error"),
+                message: Text(registerViewModel.registerError))
         }
       }
       .navigationTitle("Complete your profile")

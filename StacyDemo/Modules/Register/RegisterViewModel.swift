@@ -16,5 +16,24 @@ class RegisterViewModel: ObservableObject {
   @Published var confirmPassword = ""
   @Published var moreAboutYou = ""
   
+  @Published var registrationSuccessful = false
+  @Published var errorOccured = false
+  @Published var registerError = ""
+  
   let gender = ["Male", "Female", "Other"]
+  
+  private let userValidator = UserValidator()
+  
+  func register() {
+    let user = User(email: email, fullName: fullName, phoneNumber: phoneNumber, gender: gender[selectedGender], password: password, confirmPassword: confirmPassword, moreAboutYou: moreAboutYou)
+    
+    if !userValidator.isValid(user: user) {
+      errorOccured = true
+      registerError = "Some fields are not correct, please check."
+      return
+    }
+    
+    //TODO register user
+    registrationSuccessful = true
+  }
 }
