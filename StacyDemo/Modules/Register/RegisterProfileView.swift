@@ -8,25 +8,18 @@
 import SwiftUI
 
 struct RegisterProfileView: View {
-  @State var fullName = ""
-  @State var phoneNumber = ""
-  @State var selectedGender = 0
-  @State var email = ""
-  @State var password = ""
-  @State var confirmPassword = ""
-  @State var moreAboutYou = ""
-  
-  let gender = ["Male", "Female", "Other"]
+
+  @StateObject private var registerViewModel = RegisterViewModel()
   
   fileprivate func fullNameTextField() -> some View {
-    TextField("Full Name", text: $fullName,
+    TextField("Full Name", text: $registerViewModel.fullName,
                      onCommit: { hideKeyboard() })
       .disableAutocorrection(true)
       .textFieldStyle(RoundedBorderTextFieldStyle())
   }
   
   fileprivate func phoneNumberTextField() -> some View {
-     TextField("Phone Number", text: $phoneNumber)
+    TextField("Phone Number", text: $registerViewModel.phoneNumber)
       .disableAutocorrection(true)
       .keyboardType(.phonePad)
       .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -37,10 +30,10 @@ struct RegisterProfileView: View {
       Text("Gender")
         .foregroundColor(.text)
       
-      Picker(selection: $selectedGender,
+      Picker(selection: $registerViewModel.selectedGender,
              label: Text("Gender")) {
-        ForEach(0..<gender.count) { index in
-          Text(gender[index]).tag(index)
+        ForEach(0..<registerViewModel.gender.count) { index in
+          Text(registerViewModel.gender[index]).tag(index)
         }
       }
       .pickerStyle(SegmentedPickerStyle())
@@ -50,7 +43,7 @@ struct RegisterProfileView: View {
   }
   
   fileprivate func emailAddressTextField() -> some View {
-    TextField("Email", text: $email)
+    TextField("Email", text: $registerViewModel.email)
       .disableAutocorrection(true)
       .keyboardType(.emailAddress)
       .autocapitalization(.none)
@@ -58,12 +51,12 @@ struct RegisterProfileView: View {
   }
   
   fileprivate func passwordSecureField() -> some View {
-     SecureField("Password", text: $password)
+    SecureField("Password", text: $registerViewModel.password)
       .textFieldStyle(RoundedBorderTextFieldStyle())
   }
   
   fileprivate func confirmPasswordSecureField() -> some View {
-    SecureField("Confirm Password", text: $confirmPassword)
+    SecureField("Confirm Password", text: $registerViewModel.confirmPassword)
       .textFieldStyle(RoundedBorderTextFieldStyle())
   }
   
@@ -71,7 +64,7 @@ struct RegisterProfileView: View {
     VStack(alignment: .leading) {
       Text("Tell me more about you")
         .foregroundColor(.text)
-      TextEditor(text: $moreAboutYou)
+      TextEditor(text: $registerViewModel.moreAboutYou)
         .frame(height: 100, alignment: .topLeading)
         .disableAutocorrection(true)
         .padding(8)
