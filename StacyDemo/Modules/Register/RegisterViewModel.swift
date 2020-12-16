@@ -19,6 +19,7 @@ class RegisterViewModel: ObservableObject {
   @Published var registrationSuccessful = false
   @Published var errorOccured = false
   @Published var registerError = ""
+  @Published var loading = false
   
   let gender = ["Male", "Female", "Other"]
   
@@ -32,8 +33,8 @@ class RegisterViewModel: ObservableObject {
       registerError = "Some fields are not correct, please check."
       return
     }
-    
+    loading = true
     //TODO register user
-    registrationSuccessful = true
+   // registrationSuccessful = true
   }
 }

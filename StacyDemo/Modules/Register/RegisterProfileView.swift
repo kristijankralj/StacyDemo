@@ -85,34 +85,39 @@ struct RegisterProfileView: View {
   }
   
   var body: some View {
+    ZStack {
       ScrollView {
-        VStack(spacing: 16) {
-          fullNameTextField()
-          
-          phoneNumberTextField()
-          
-          genderPicker()
-          
-          emailAddressTextField()
-          
-          passwordSecureField()
-          
-          confirmPasswordSecureField()
-          
-          moreAboutYouTextEditor()
-          
-          registerButton()
+          VStack(spacing: 16) {
+            fullNameTextField()
+            
+            phoneNumberTextField()
+            
+            genderPicker()
+            
+            emailAddressTextField()
+            
+            passwordSecureField()
+            
+            confirmPasswordSecureField()
+            
+            moreAboutYouTextEditor()
+            
+            registerButton()
+          }
+          .padding()
+          .onTapGesture {
+            hideKeyboard()
+          }
+          .alert(isPresented: $registerViewModel.errorOccured) {
+            Alert(title: Text("Error"),
+                  message: Text(registerViewModel.registerError))
+          }
         }
-        .padding()
-        .onTapGesture {
-          hideKeyboard()
-        }
-        .alert(isPresented: $registerViewModel.errorOccured) {
-          Alert(title: Text("Error"),
-                message: Text(registerViewModel.registerError))
-        }
-      }
       .navigationTitle("Complete your profile")
+      if registerViewModel.loading {
+        LoadingView()
+      }
+    }//zstack
     }
 }
 
