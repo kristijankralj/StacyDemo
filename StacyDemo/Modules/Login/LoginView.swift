@@ -58,6 +58,9 @@ struct LoginView: View {
           .onAppear {
               animateViews()
           }
+          .alert(isPresented: $loginViewModel.errorOccured) {
+            Alert(title: Text("Error"), message: Text(loginViewModel.loginError))
+          }
         }//navigationview
         if loginViewModel.loginSuccessful {
           HomeView()

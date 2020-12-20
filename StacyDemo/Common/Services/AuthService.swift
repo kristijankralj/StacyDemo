@@ -20,8 +20,15 @@ struct AuthService {
   func loginUser(withEmail email: String,
                  andPassword password: String,
                  completion: @escaping (_ error: Error?) -> Void) {
-    //TODO implement with firebase
-    completion(nil)
+    Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
+      guard error == nil else {
+        completion(error)
+        return
+      }
+      guard let authResult = authResult else { return }
+      
+      completion(nil)
+    }
   }
   
   func sendPasswordReset(email: String, completion: @escaping () -> Void) {

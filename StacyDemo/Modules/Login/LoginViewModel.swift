@@ -12,14 +12,21 @@ class LoginViewModel: ObservableObject {
   @Published var email: String = ""
   @Published var password: String = ""
   @Published var loginSuccessful = false
+  @Published var errorOccured = false
+  @Published var loginError = ""
   
   private let authService = AuthService()
   
   func loginUser() {
     authService.loginUser(withEmail: email,
                           andPassword: password) { [self] error in
-      //TODO check error and show alert if there are errors
-      loginSuccessful = true
+      if error == nil {
+        loginSuccessful = true
+      }
+      else {
+        errorOccured = true
+        loginError = error!.localizedDescription
+      }
     }
   }
 }
