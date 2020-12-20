@@ -32,8 +32,9 @@ struct AuthService {
   }
   
   func sendPasswordReset(email: String, completion: @escaping () -> Void) {
-    //TODO implement with firebase
-    completion()
+    Auth.auth().sendPasswordReset(withEmail: email) { error in
+      completion()
+    }
   }
   
   func register(user: User, completion: @escaping (_ error: Error?) -> Void) {
