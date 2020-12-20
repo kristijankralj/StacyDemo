@@ -24,8 +24,9 @@ class RegisterViewModel: ObservableObject {
   let gender = ["Male", "Female", "Other"]
   
   private let userValidator = UserValidator()
+  private let authService = AuthService()
   
-  func register() {
+  func register(with onboardingDetails: UserOnboardingDetails) {
     let user = User(email: email, fullName: fullName, phoneNumber: phoneNumber, gender: gender[selectedGender], password: password, confirmPassword: confirmPassword, moreAboutYou: moreAboutYou)
     
     if !userValidator.isValid(user: user) {
@@ -33,8 +34,23 @@ class RegisterViewModel: ObservableObject {
       registerError = "Some fields are not correct, please check."
       return
     }
+    user.set(onboardingDetails: onboardingDetails)
     loading = true
-    //TODO register user
-   // registrationSuccessful = true
+    
+    authService.register(user: user) { [self] error in
+      guard error == nil else {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2 ) {
+          loading = false
+          registrationSuccessful = false
+          errorOccured = true
+          registerError = error!.localizedDescription
+        }
+        return
+      }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 2 ) {
+        loading = false
+        registrationSuccessful = true
+      }
+    }
   }
 }

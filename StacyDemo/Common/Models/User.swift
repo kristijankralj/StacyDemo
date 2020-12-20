@@ -6,15 +6,24 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
-class User {
+class User: Identifiable, Codable {
+  @DocumentID var id: String?
+  
+  var userId = ""
   let email: String
   let fullName: String
   let phoneNumber: String
   let gender: String
-  let password: String
-  let confirmPassword: String
+  var password: String = ""
+  var confirmPassword: String = ""
   let moreAboutYou: String
+  //onboarding details
+  var roomType = ""
+  var location = ""
+  var moveInDate = Date()
+  var maxRent: Double = 0
   
   init(email: String,
        fullName: String,
@@ -30,5 +39,25 @@ class User {
     self.password = password
     self.confirmPassword = confirmPassword
     self.moreAboutYou = moreAboutYou
+  }
+  
+  func set(onboardingDetails: UserOnboardingDetails) {
+    roomType = onboardingDetails.roomType
+    location = onboardingDetails.location
+    moveInDate = onboardingDetails.moveInDate
+    maxRent = onboardingDetails.maxRent
+  }
+  
+  private enum CodingKeys: String, CodingKey {
+    case userId,
+         email,
+         fullName,
+         gender,
+         phoneNumber,
+         moreAboutYou,
+         roomType,
+         location,
+         moveInDate,
+         maxRent
   }
 }

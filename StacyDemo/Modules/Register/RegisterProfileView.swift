@@ -10,6 +10,7 @@ import SwiftUI
 struct RegisterProfileView: View {
 
   @StateObject private var registerViewModel = RegisterViewModel()
+  @EnvironmentObject var onboardingDetails: UserOnboardingDetails
   
   fileprivate func fullNameTextField() -> some View {
     TextField("Full Name", text: $registerViewModel.fullName,
@@ -75,7 +76,7 @@ struct RegisterProfileView: View {
   
   fileprivate func registerButton() -> some View {
     NavigationLink(destination: HomeView(), isActive: $registerViewModel.registrationSuccessful) {
-      Button(action: { registerViewModel.register() }) {
+      Button(action: { registerViewModel.register(with: onboardingDetails) }) {
         Text("REGISTER")
           .textStyle(GradientButtonStyle())
           .padding(.horizontal, -20)
