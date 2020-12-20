@@ -15,9 +15,17 @@ struct StacyDemoApp: App {
     FirebaseApp.configure()
   }
   
-    var body: some Scene {
-        WindowGroup {
-            OnboardingView()
-        }
+  var body: some Scene {
+    WindowGroup {
+      if UserDefaults.standard.bool(forKey: Constants.LOGGED_IN) {
+        HomeView()
+      }
+      else if UserDefaults.standard.bool(forKey: Constants.ONBOARDED) {
+        LoginView()
+      }
+      else {
+      OnboardingView()
+      }
     }
+  }
 }

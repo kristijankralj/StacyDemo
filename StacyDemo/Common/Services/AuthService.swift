@@ -14,6 +14,14 @@ struct AuthService {
   private var db = Firestore.firestore()
   
   func currentUser() -> User? {
+    guard Auth.auth().currentUser != nil else { return nil }
+    
+    if let savedUser = UserDefaults.standard.object(forKey: Constants.CURRENT_USER) as? Data {
+      let decoder = JSONDecoder()
+      if let loadedPerson = try? decoder.decode(User.self, from: savedUser) {
+        return loadedPerson
+      }
+    }
     return nil
   }
   
@@ -26,6 +34,8 @@ struct AuthService {
         return
       }
       guard let authResult = authResult else { return }
+      
+      self.saveUserToDefaults(userID: authResult.user.uid)
       
       completion(nil)
     }
@@ -55,5 +65,24 @@ struct AuthService {
         completion(registerError)
       }
     }
+  }
+  
+  private func saveUserToDefaults(userID: String) {
+    db.collection(Constants.USERS_COLLECTION)
+      .whereField("userId", isEqualTo: userID)
+      .getDocuments { (querySnapshot, error) in
+        if error != nil {
+          return
+        }
+        
+        guard let documents = querySnapshot?.documents else { return }
+        
+        if let user = try? documents.first?.data(as: User.self) {
+          UserDefaults.standard.set(true, forKey: Constants.LOGGED_IN)
+          if let encoded = try? JSONEncoder().encode(user) {
+            UserDefaults.standard.set(encoded, forKey: Constants.CURRENT_USER)
+          }
+        }
+      }
   }
 }

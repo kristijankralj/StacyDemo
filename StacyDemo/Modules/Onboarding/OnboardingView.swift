@@ -58,6 +58,7 @@ struct OnboardingView: View {
         }
       }
       .onAppear {
+        UserDefaults.standard.set(true, forKey: Constants.ONBOARDED)
         animateViews()
       }
       .fullScreenCover(isPresented: $showLogin) {
