@@ -6,16 +6,26 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
 
 struct HomeView: View {
+  
+//  init() {
+//    var db = Firestore.firestore()
+//    for room in roomData {
+//      try? db.collection(Constants.ROOMS_COLLECTION).addDocument(from: room)
+//    }
+//  }
+  
     var body: some View {
       ZStack {
         Color.primary
           .colorInvert()
           .ignoresSafeArea(.all)
         
-        Text("Hello, Home!")
+        RoomListingView()
       }
+      .navigationBarHidden(true)
     }
 }
 

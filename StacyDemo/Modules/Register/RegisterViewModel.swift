@@ -8,13 +8,13 @@
 import Foundation
 
 class RegisterViewModel: ObservableObject {
-  @Published var fullName = ""
-  @Published var phoneNumber = ""
+  @Published var fullName = "Kristijan Kralj"
+  @Published var phoneNumber = "1234567"
   @Published var selectedGender = 0
-  @Published var email = ""
-  @Published var password = ""
-  @Published var confirmPassword = ""
-  @Published var moreAboutYou = ""
+  @Published var email = "kristijan.kralj00@gmail.com"
+  @Published var password = "123456"
+  @Published var confirmPassword = "123456"
+  @Published var moreAboutYou = "Senior Software Developer"
   
   @Published var registrationSuccessful = false
   @Published var errorOccured = false

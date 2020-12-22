@@ -12,16 +12,19 @@ struct RoomListingView: View {
   @StateObject var roomListingViewModel = RoomListingViewModel()
   
     var body: some View {
-      ScrollView(.vertical) {
-        LazyVStack {
-          ForEach(roomListingViewModel.rooms, id: \.localId) {
-            item in
-            RoomRow(room: item)
-              .background(Color.primary.colorInvert()
-                            .shadow(color: Color.black.opacity(0.6), radius: 4, x: 0, y: 4))
+      NavigationView {
+        ScrollView(.vertical) {
+          LazyVStack {
+            ForEach(roomListingViewModel.rooms, id: \.localId) {
+              item in
+              RoomRow(room: item)
+                .background(Color.primary.colorInvert()
+                              .shadow(color: Color.black.opacity(0.6), radius: 4, x: 0, y: 4))
+            }
           }
+          .background(Color.tableBackground)
         }
-        .background(Color.tableBackground)
+        .navigationTitle("Rooms")
       }
     }
 }
@@ -29,6 +32,5 @@ struct RoomListingView: View {
 struct RoomListingView_Previews: PreviewProvider {
     static var previews: some View {
       RoomListingView()
-        .preferredColorScheme(.dark)
     }
 }

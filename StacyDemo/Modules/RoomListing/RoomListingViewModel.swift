@@ -9,5 +9,17 @@ import Foundation
 
 
 class RoomListingViewModel: ObservableObject {
-  @Published var rooms: [Room] = roomData
+  @Published var rooms: [Room] = []
+  
+  private var roomService = RoomService()
+  
+  init() {
+    roomService.getRooms { [self] (fetchedRooms) in
+      DispatchQueue.main.async {
+        if let fetchedRooms = fetchedRooms {
+          rooms = fetchedRooms
+        }
+      }
+    }
+  }
 }

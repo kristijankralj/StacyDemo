@@ -26,6 +26,7 @@
 		C85855072591E6A300968A86 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85855062591E6A300968A86 /* Room.swift */; };
 		C858550B2591EF0100968A86 /* RoomListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C858550A2591EF0100968A86 /* RoomListingView.swift */; };
 		C858550F2591EF1C00968A86 /* RoomListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C858550E2591EF1C00968A86 /* RoomListingViewModel.swift */; };
+		C85855122591F70900968A86 /* RoomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85855112591F70900968A86 /* RoomService.swift */; };
 		C88F0C6C2589F07E006573DA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C88F0C6B2589F07E006573DA /* Lottie */; };
 		C88F0C702589F0E8006573DA /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F0C6F2589F0E8006573DA /* LottieView.swift */; };
 		C88F0C732589F2C3006573DA /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F0C722589F2C3006573DA /* LoadingView.swift */; };
@@ -70,6 +71,7 @@
 		C85855062591E6A300968A86 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		C858550A2591EF0100968A86 /* RoomListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListingView.swift; sourceTree = "<group>"; };
 		C858550E2591EF1C00968A86 /* RoomListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListingViewModel.swift; sourceTree = "<group>"; };
+		C85855112591F70900968A86 /* RoomService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomService.swift; sourceTree = "<group>"; };
 		C88F0C6F2589F0E8006573DA /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		C88F0C722589F2C3006573DA /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		C88F0C752589F2E6006573DA /* phone.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = phone.json; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				C8ED84FD2588B40C007EC5FC /* AuthService.swift */,
+				C85855112591F70900968A86 /* RoomService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				C8ED85042588B993007EC5FC /* LoginViewModel.swift in Sources */,
 				C8198C9F257500B80003CE05 /* OnboardingItem.swift in Sources */,
 				C8142FEC2578D90100B66ACA /* ScreenTitle.swift in Sources */,
+				C85855122591F70900968A86 /* RoomService.swift in Sources */,
 				C83D0A2E2580B6210000B751 /* AnimatedWave.swift in Sources */,
 				C8E63ACF25874CDA00B84FD6 /* ViewExtensions.swift in Sources */,
 				C82757692583640200054926 /* RegisterMoveDetailsView.swift in Sources */,
