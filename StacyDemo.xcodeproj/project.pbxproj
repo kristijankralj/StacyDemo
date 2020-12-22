@@ -24,6 +24,8 @@
 		C85855012591E3C500968A86 /* UserCellRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85855002591E3C500968A86 /* UserCellRow.swift */; };
 		C85855042591E67D00968A86 /* RoomRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85855032591E67D00968A86 /* RoomRow.swift */; };
 		C85855072591E6A300968A86 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85855062591E6A300968A86 /* Room.swift */; };
+		C858550B2591EF0100968A86 /* RoomListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C858550A2591EF0100968A86 /* RoomListingView.swift */; };
+		C858550F2591EF1C00968A86 /* RoomListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C858550E2591EF1C00968A86 /* RoomListingViewModel.swift */; };
 		C88F0C6C2589F07E006573DA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C88F0C6B2589F07E006573DA /* Lottie */; };
 		C88F0C702589F0E8006573DA /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F0C6F2589F0E8006573DA /* LottieView.swift */; };
 		C88F0C732589F2C3006573DA /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F0C722589F2C3006573DA /* LoadingView.swift */; };
@@ -66,6 +68,8 @@
 		C85855002591E3C500968A86 /* UserCellRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellRow.swift; sourceTree = "<group>"; };
 		C85855032591E67D00968A86 /* RoomRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRow.swift; sourceTree = "<group>"; };
 		C85855062591E6A300968A86 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		C858550A2591EF0100968A86 /* RoomListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListingView.swift; sourceTree = "<group>"; };
+		C858550E2591EF1C00968A86 /* RoomListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListingViewModel.swift; sourceTree = "<group>"; };
 		C88F0C6F2589F0E8006573DA /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		C88F0C722589F2C3006573DA /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		C88F0C752589F2E6006573DA /* phone.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = phone.json; sourceTree = "<group>"; };
@@ -152,6 +156,15 @@
 				C8ED85092588DAAE007EC5FC /* RegisterViewModel.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		C85855092591EEF100968A86 /* RoomListing */ = {
+			isa = PBXGroup;
+			children = (
+				C858550A2591EF0100968A86 /* RoomListingView.swift */,
+				C858550E2591EF1C00968A86 /* RoomListingViewModel.swift */,
+			);
+			path = RoomListing;
 			sourceTree = "<group>";
 		};
 		C8CEED132584E32D00576A71 /* Home */ = {
@@ -264,6 +277,7 @@
 		C8EE1C8425764F3A0001FB7B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C85855092591EEF100968A86 /* RoomListing */,
 				C8CEED132584E32D00576A71 /* Home */,
 				C8142FF92578DB1800B66ACA /* Register */,
 				C8142FF42578DAF700B66ACA /* PasswordReset */,
@@ -384,6 +398,7 @@
 				C8ED84FE2588B40C007EC5FC /* AuthService.swift in Sources */,
 				C8CEED152584E33900576A71 /* HomeView.swift in Sources */,
 				C88F0C732589F2C3006573DA /* LoadingView.swift in Sources */,
+				C858550B2591EF0100968A86 /* RoomListingView.swift in Sources */,
 				C827576C2583642800054926 /* RegisterProfileView.swift in Sources */,
 				C8ED850E2588DF8F007EC5FC /* UserValidator.swift in Sources */,
 				C85855072591E6A300968A86 /* Room.swift in Sources */,
@@ -395,6 +410,7 @@
 				C85855012591E3C500968A86 /* UserCellRow.swift in Sources */,
 				C8142FF62578DB0C00B66ACA /* PasswordResetView.swift in Sources */,
 				C827576625835EB500054926 /* UserOnboardingDetails.swift in Sources */,
+				C858550F2591EF1C00968A86 /* RoomListingViewModel.swift in Sources */,
 				C85855042591E67D00968A86 /* RoomRow.swift in Sources */,
 				C83D0A312580BF690000B751 /* AnimatedWaveBackground.swift in Sources */,
 				C8EE1C7B25763C100001FB7B /* ColorExtensions.swift in Sources */,
