@@ -22,6 +22,8 @@
 		C83D0A2E2580B6210000B751 /* AnimatedWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83D0A2D2580B6210000B751 /* AnimatedWave.swift */; };
 		C83D0A312580BF690000B751 /* AnimatedWaveBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83D0A302580BF690000B751 /* AnimatedWaveBackground.swift */; };
 		C85855012591E3C500968A86 /* UserCellRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85855002591E3C500968A86 /* UserCellRow.swift */; };
+		C85855042591E67D00968A86 /* RoomRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85855032591E67D00968A86 /* RoomRow.swift */; };
+		C85855072591E6A300968A86 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85855062591E6A300968A86 /* Room.swift */; };
 		C88F0C6C2589F07E006573DA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C88F0C6B2589F07E006573DA /* Lottie */; };
 		C88F0C702589F0E8006573DA /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F0C6F2589F0E8006573DA /* LottieView.swift */; };
 		C88F0C732589F2C3006573DA /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F0C722589F2C3006573DA /* LoadingView.swift */; };
@@ -62,6 +64,8 @@
 		C83D0A2D2580B6210000B751 /* AnimatedWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedWave.swift; sourceTree = "<group>"; };
 		C83D0A302580BF690000B751 /* AnimatedWaveBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedWaveBackground.swift; sourceTree = "<group>"; };
 		C85855002591E3C500968A86 /* UserCellRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellRow.swift; sourceTree = "<group>"; };
+		C85855032591E67D00968A86 /* RoomRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRow.swift; sourceTree = "<group>"; };
+		C85855062591E6A300968A86 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		C88F0C6F2589F0E8006573DA /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		C88F0C722589F2C3006573DA /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		C88F0C752589F2E6006573DA /* phone.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = phone.json; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 				C83D0A302580BF690000B751 /* AnimatedWaveBackground.swift */,
 				C88F0C722589F2C3006573DA /* LoadingView.swift */,
 				C85855002591E3C500968A86 /* UserCellRow.swift */,
+				C85855032591E67D00968A86 /* RoomRow.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 				C8198C9E257500B80003CE05 /* OnboardingItem.swift */,
 				C827576525835EB500054926 /* UserOnboardingDetails.swift */,
 				C8ED85002588B4A3007EC5FC /* User.swift */,
+				C85855062591E6A300968A86 /* Room.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -380,6 +386,7 @@
 				C88F0C732589F2C3006573DA /* LoadingView.swift in Sources */,
 				C827576C2583642800054926 /* RegisterProfileView.swift in Sources */,
 				C8ED850E2588DF8F007EC5FC /* UserValidator.swift in Sources */,
+				C85855072591E6A300968A86 /* Room.swift in Sources */,
 				C81DB4B82582171F0010BFD3 /* RegisterPlaceView.swift in Sources */,
 				C8142FFB2578DB2C00B66ACA /* RegisterTypeView.swift in Sources */,
 				C8E959BC257111BF000A7E10 /* StacyDemoApp.swift in Sources */,
@@ -388,6 +395,7 @@
 				C85855012591E3C500968A86 /* UserCellRow.swift in Sources */,
 				C8142FF62578DB0C00B66ACA /* PasswordResetView.swift in Sources */,
 				C827576625835EB500054926 /* UserOnboardingDetails.swift in Sources */,
+				C85855042591E67D00968A86 /* RoomRow.swift in Sources */,
 				C83D0A312580BF690000B751 /* AnimatedWaveBackground.swift in Sources */,
 				C8EE1C7B25763C100001FB7B /* ColorExtensions.swift in Sources */,
 				C8142FF12578D93F00B66ACA /* EmailField.swift in Sources */,
