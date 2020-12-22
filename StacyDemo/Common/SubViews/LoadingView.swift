@@ -18,7 +18,7 @@ struct LoadingView: View {
           .padding()
           .opacity(show ? 1 : 0)
           .animation(Animation.linear(duration: 1).delay(0.2))
-        LottieView(animationName: "phone")
+        LottieView(animationName: "success")
           .frame(width: 260, height: 200)
           .opacity(show ? 1 : 0)
           .animation(Animation.linear(duration: 1).delay(0.3))
